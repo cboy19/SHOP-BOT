@@ -1,0 +1,16 @@
+MicrosoftAppId=
+MicrosoftAppPassword=
+LuisAppId=
+LuisAPIKey=
+LuisAPIHostName=
+CONTAINER = 
+STORAGEKEY = 
+STORAGENAME = 
+
+QnAKnowledgebaseId=
+QnAEndpointKey=
+QnAEndpointHostName=
+
+searchUrl=
+createUrl=""
+authKey=""
