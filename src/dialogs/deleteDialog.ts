@@ -28,7 +28,7 @@ export class DeleteDialog extends ComponentDialog{
 private async deleteStep(stepContext: WaterfallStepContext): Promise<DialogTurnResult> {
     const cart = stepContext.options as Cart;
     if (stepContext.context.activity.value.buttonPressed === "&delete") {
-        cart.deleteItem(+(stepContext.context.activity.value.value));
+        cart.deleteItem(stepContext.context.activity.value.value);
         await stepContext.context.sendActivity("Item Deleted from the cart");
         if(cart.getCount() > 0){
         await stepContext.context.sendActivity({ attachments: [createAutoCartcard(cart.getCart(), "confirmPayload", cart.getcalculateTotal())] });

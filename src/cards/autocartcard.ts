@@ -1,7 +1,7 @@
 import * as ACData from "adaptivecards-templating";
 import * as AdaptiveCards from "adaptivecards";
 import { MessageFactory, Activity, CardFactory, Attachment } from "botbuilder";
-import { Items, Item } from "./types";
+import { Items, Carts, Item } from "./types";
 
 
 let checkout = {buttonPressed:"&checkout"};
@@ -79,7 +79,7 @@ var confirmPayload = {
                                             "buttonPressed":"&delete",
                                             "id": "indexinput",
                                             "spacing": "None",
-                                            "value": "{index}"
+                                            "value": "{key}"
                                         }
                                     ],
                                     "isVisible": false
@@ -94,7 +94,7 @@ var confirmPayload = {
                                             "type": "Image",
                                             "altText": "",
                                             "id": "deleteimg",
-                                            "url": "/Users/ips/Downloads/images/delete.png",
+                                            "url": "https://i5-qa.walmartimages.com/asr/5c0f7d74-3b0c-4872-b39f-17ce1bd11768_1.dbd296350fb526ff5b466030a11a1233.png",
                                             "spacing": "None",
                                             "horizontalAlignment": "Right",
                                             "style": "Person"
@@ -248,7 +248,7 @@ var confirmPayload = {
                     "id": "itemcontainer",
                     "style": "emphasis",
                     "spacing": "None",
-                    "backgroundImage": "/Users/ips/Downloads/images/whitebkgd.png"
+                    "backgroundImage": "https://i5-qa.walmartimages.com/asr/86baf508-a411-46ee-b324-78dabca1e3c6_1.f15128525efe8a508a9ee5f68179ff76.jpeg"
                 }
             ],
             "id": "rootcontainer",
@@ -535,7 +535,7 @@ let orderPayload = {
                     "id": "itemcontainer",
                     "style": "emphasis",
                     "spacing": "None",
-                    "backgroundImage": "/Users/ips/Downloads/images/whitebkgd.png"
+                    "backgroundImage": "https://i5-qa.walmartimages.com/asr/86baf508-a411-46ee-b324-78dabca1e3c6_1.f15128525efe8a508a9ee5f68179ff76.jpeg"
                 }
             ],
             "id": "rootcontainer",
@@ -611,7 +611,7 @@ let dataObject = {
              items:[]
                  };
 
-export function createAutoCartcard(data: Items[], cardType: String, total:number): Attachment {
+export function createAutoCartcard(data: Carts[], cardType: String, total:number): Attachment {
 
 // Create a Template instamce from the template payload
 if (cardType == "confirmPayload") { var template = new ACData.Template(confirmPayload); }

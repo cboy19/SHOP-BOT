@@ -172,7 +172,7 @@ export function createWelcomeCard(): Attachment {
                             {
                                 "type": "Image",
                                 "altText": "",
-                                "url": "/Users/ips/Desktop/test.png"
+                                "url": "https://i5-qa.walmartimages.com/asr/a4cdf400-c1a7-4a8a-83a0-bb64c18951c5_1.b3f8723fa078ebbae45cf6317fbf3e67.png"
                             }
                         ]
                     },

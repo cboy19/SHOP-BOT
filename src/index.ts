@@ -34,9 +34,13 @@ import { QnaRecognizer } from './dialogs/QnaRecognizer';
 // The helper-class recognizer that calls LUIS
 import { LuisappRecognizer } from './dialogs/luisappRecognizer';
 
+console.log("inside Index file");
+
 // Note: Ensure you have a .env file and include LuisAppId, LuisAPIKey and LuisAPIHostName.
 const ENV_FILE = path.join(__dirname, '..', '.env');
 config({ path: ENV_FILE });
+
+console.log("inside after env file");
 
 // Create adapter.
 // See https://aka.ms/about-bot-adapter to learn more about adapters.
@@ -44,6 +48,8 @@ const adapter = new BotFrameworkAdapter({
     appId: process.env.MicrosoftAppID,
     appPassword: process.env.MicrosoftAppPassword
 });
+
+console.log("inside after adapter");
 
 // Catch-all for errors.
 const onTurnErrorHandler = async (context, error) => {

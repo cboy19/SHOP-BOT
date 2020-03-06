@@ -9,15 +9,17 @@ export interface Items {
     supplier: Number,
     mcccode: Number,
     auxiliary: String,
-    subtotal: String
+    subtotal: String,
+    key:String
 };
 
 export interface Carts {
+    key:String
     index: String,
     description: String,
     supplierpartId: String,
     imgUrl: String,
-    price: Number,
+    price: String,
     currency: String,
     quantity: String,
     uom: String,

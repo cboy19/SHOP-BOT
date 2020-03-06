@@ -12,7 +12,7 @@ export function searchMappings(searchItems:any): Items[] {
         if((punit !== undefined) && ((<any>Object).values(punit).includes("WMSC")) || (punit === "WMSC")){
         let data:Items = <Items>{};
         if ( Object.keys(obj.Image).length === 0){
-            data.imgUrl = `/images/noimage.png`;
+            data.imgUrl = `https://i5-qa.walmartimages.com/asr/b3646e4b-3f9b-4725-86bf-e794abbd182e_1.f7bffbbdf56c041784b2c25df092fdc7.png`;
         }else{data.imgUrl = obj.Image;}        
         data.description = obj.Description;
         data.auxiliary = obj.SupplierPartAuxiliaryId;
@@ -24,6 +24,7 @@ export function searchMappings(searchItems:any): Items[] {
         data.price = obj.Price.Amount;
         data.currency = obj.Price.Currency;
         data.subtotal = (+data.quantity * +data.price).toString();
+        data.key = obj.Key;
         items.push(data);
                                                     }
     });

@@ -11,7 +11,7 @@ export class Cart {
     
 
     addItem(item: Items){
-        const cartItem= this.cart.find(cartItems => cartItems.supplierpartId === item.supplierpartId)
+        const cartItem= this.cart.find(cartItems => cartItems.key === item.key);
         if(cartItem) {  
             cartItem.quantity = (+cartItem.quantity + +item.quantity).toString(); 
             cartItem.subtotal = (+cartItem.quantity * +cartItem.price).toString();
@@ -21,15 +21,17 @@ export class Cart {
             item.subtotal = (+item.quantity * +item.price).toString();
             Object.assign(tempCart,item); 
      //       tempCart.index = tempCart.index ? tempCart.index : this.initial.toString();
-            tempCart.index =  Cart.index.toString();  //(this.getCount()).toString();
+            tempCart.index =  Cart.index.toString();  
+            tempCart.price =  item.price.toString();
             this.cart.push(tempCart); 
             Cart.index++;
              }
     }
 
-    deleteItem(ind:number){
+    deleteItem(ind:String){
+        const cartItem= this.cart.find(cartItems => cartItems.key === ind);
         _.remove(this.cart, function(item){
-            return item.index === ind.toString();
+            return item.index === cartItem.index.toString();
         });
     }
 
@@ -53,7 +55,25 @@ export class Cart {
 
         let myIndex = 0;  
         let myCart  =  this.cart.slice(); 
-        let currectCart = this.cart;                                  
+        let currectCart = this.cart; 
+
+        Object.keys(value).map(function (key) { 
+            if (key.includes("index")){
+                let cartItem = currectCart.find(cartItems => cartItems.key === value[key]);
+                let myKey = 'quantity' + key.charAt(10);
+                    if(+cartItem.quantity !== +value[myKey]){
+                        if (value[myKey] > 0){
+                        cartItem.quantity = value[myKey];
+                        cartItem.subtotal = (+cartItem.price * value[myKey]).toString();
+                                           }
+                        else {currectCart.splice(+cartItem.index, 1); }                   
+                    }
+            }
+        });        
+
+
+
+ /*       
         Object.keys(value).map(function (key) { 
             if (key.includes("quantity")){
                 if (value[key] !== myCart[myIndex].quantity){                               
@@ -76,7 +96,7 @@ export class Cart {
             
         });     
 
-
+*/
 
 
     }
