@@ -16,4 +16,4 @@ createUrl=""
 authKey=""
 
 
-//        "start": "tsc --build && node ./lib/index.js",
+//        
