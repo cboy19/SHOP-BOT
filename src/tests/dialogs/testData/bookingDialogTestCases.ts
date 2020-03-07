@@ -18,6 +18,8 @@ function formatBookingDialogDate(date) {
     return [year, month, day].join('-');
 }
 
+
+
 module.exports = [
     {
         expectedResult: {
