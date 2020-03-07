@@ -1,7 +1,7 @@
 /**
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT License.
- */
+ 
 const now = new Date();
 const tomorrow = formatDate(new Date().setDate(now.getDate() + 1));
 const dayAfterTomorrow = formatDate(new Date().setDate(now.getDate() + 2));
@@ -75,3 +75,4 @@ module.exports = [
         ]
     }
 ];
+*/

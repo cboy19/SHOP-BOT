@@ -1,15 +1,15 @@
 /**
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT License.
- */
+ 
 import { ActivityTypes, ConversationState, MemoryStorage, TestAdapter, TurnContext, UserState } from 'botbuilder';
 import { Dialog, DialogSet, DialogTurnStatus } from 'botbuilder-dialogs';
 import { DialogAndWelcomeBot } from '../../bots/dialogAndWelcomeBot';
 const assert = require('assert');
-
+*/
 /**
  * A simple mock for a root dialog that gets invoked by the bot.
- */
+ 
 class MockRootDialog extends Dialog {
     constructor() {
         super('mockRootDialog');
@@ -71,3 +71,4 @@ describe('DialogAndWelcomeBot', () => {
         assert.strictEqual(reply.text, 'mockRootDialog mock invoked');
     });
 });
+*/

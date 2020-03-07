@@ -1,7 +1,7 @@
 /**
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT License.
- */
+
 const bookingDialogNow = new Date();
 const bookingDialogToday = formatBookingDialogDate(new Date());
 const bookingDialogTomorrow = formatBookingDialogDate(new Date().setDate(bookingDialogNow.getDate() + 1));
@@ -150,3 +150,4 @@ module.exports = [
         ]
     }
 ];
+ */
