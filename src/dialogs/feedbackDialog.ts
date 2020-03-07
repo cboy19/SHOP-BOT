@@ -4,8 +4,7 @@ import {
     DialogTurnResult,
     TextPrompt,
     WaterfallDialog,
-    WaterfallStepContext,
-    DialogContext
+    WaterfallStepContext
 } from 'botbuilder-dialogs';
 import { SearchTerm } from './searchTerm';
 import { CancelAndHelpDialog } from './cancelAndHelpDialog';
