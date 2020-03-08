@@ -4,7 +4,7 @@
     "description": "Shopping bot",
     "author": "Generated using Microsoft Bot Builder Yeoman generator v4.7.0",
     "license": "MIT",
-    "engines":{"node": "10.16.0"},
+    "engines":{"node": "10.16.3"},
     "main": "./lib/index.js",
     "scripts": {
         "build": "tsc --build",
